@@ -196,6 +196,8 @@ Unity Catalog provides one permission layer with a three-level namespace, column
 
 Permissions are **hierarchical**: `SELECT` on a table does nothing without `USE SCHEMA` and `USE CATALOG` above it — the most common cause of "I granted access but they still can't see it." Grants are issued to groups rather than individuals, so adding a person is one membership change.
 
+![Column-level lineage for dim_customer](lineage.png)
+
 ### Data quality gate
 
 Seven checks run after each load. All results are reported before the gate raises, so every failure is visible in one run:
